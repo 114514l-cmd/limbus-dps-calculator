@@ -1,0 +1,197 @@
+{
+  "_说明": "人格与技能数据。数值为示例配置，请按游戏内最新数据校准。coin_power 可为负数（反面惩罚硬币）。cond 为条件增益：charge>=N 表示充能层数达标时触发。",
+  "_参数说明": {
+    "base_power": "技能基础威力",
+    "coin_power": "每个硬币的硬币威力列表，长度即硬币数",
+    "dmg_type": "伤害类型: slash斩击 / pierce突刺 / blunt打击",
+    "sin": "罪孽属性: wrath色欲/lust愤怒/sloth怠惰/gluttony暴食/gloom忧郁/pride傲慢/envy嫉妒",
+    "cond": {
+      "charge_at_least": "充能≥N时生效",
+      "coin_power_add": "每个硬币威力+X",
+      "base_power_add": "基础威力+X"
+    }
+  },
+  "identities": [
+    {
+      "name": "W公司 清扫要员 堂吉诃德",
+      "note": "充能体系示例",
+      "offense_level": 50,
+      "skills": [
+        {
+          "name": "S1 清扫开始",
+          "base_power": 4,
+          "coin_power": [
+            3,
+            3
+          ],
+          "dmg_type": "slash",
+          "sin": "lust",
+          "cond": {
+            "charge_at_least": 5,
+            "coin_power_add": 1
+          },
+          "copies": 3
+        },
+        {
+          "name": "S2 快速清扫",
+          "base_power": 5,
+          "coin_power": [
+            4,
+            4,
+            4
+          ],
+          "dmg_type": "slash",
+          "sin": "lust",
+          "cond": {
+            "charge_at_least": 10,
+            "coin_power_add": 2
+          },
+          "copies": 2
+        },
+        {
+          "name": "S3 空间撕裂",
+          "base_power": 6,
+          "coin_power": [
+            5,
+            5,
+            5,
+            5
+          ],
+          "dmg_type": "slash",
+          "sin": "lust",
+          "cond": {
+            "charge_at_least": 15,
+            "coin_power_add": 3
+          },
+          "copies": 1
+        }
+      ],
+      "egos": [
+        {
+          "name": "E.G.O 空间奔流",
+          "base_power": 20,
+          "coin_power": [
+            12
+          ],
+          "dmg_type": "slash",
+          "sin": "pride",
+          "cost": {
+            "lust": 3,
+            "gloom": 2
+          },
+          "is_ego": true
+        }
+      ]
+    },
+    {
+      "name": "R公司 兔子 希斯克里夫",
+      "note": "多硬币速射示例",
+      "offense_level": 50,
+      "skills": [
+        {
+          "name": "S1 速射",
+          "base_power": 3,
+          "coin_power": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "dmg_type": "pierce",
+          "sin": "wrath",
+          "copies": 3,
+          "dot": {
+            "type": "bleed",
+            "potency": 3,
+            "count": 2
+          }
+        },
+        {
+          "name": "S2 火力压制",
+          "base_power": 4,
+          "coin_power": [
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "dmg_type": "pierce",
+          "sin": "wrath",
+          "cond": {
+            "charge_at_least": 6,
+            "base_power_add": 1
+          },
+          "copies": 2,
+          "dot": {
+            "type": "bleed",
+            "potency": 5,
+            "count": 3
+          }
+        },
+        {
+          "name": "S3 全弹发射",
+          "base_power": 5,
+          "coin_power": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "dmg_type": "pierce",
+          "sin": "wrath",
+          "cond": {
+            "charge_at_least": 12,
+            "coin_power_add": 2
+          },
+          "copies": 1
+        }
+      ]
+    },
+    {
+      "name": "N公司 大锤 默尔索",
+      "note": "单发重击示例（高基础低硬币）",
+      "offense_level": 50,
+      "skills": [
+        {
+          "name": "S1 挥锤",
+          "base_power": 7,
+          "coin_power": [
+            6
+          ],
+          "dmg_type": "blunt",
+          "sin": "gloom",
+          "copies": 3
+        },
+        {
+          "name": "S2 重锤猛击",
+          "base_power": 9,
+          "coin_power": [
+            8,
+            8
+          ],
+          "dmg_type": "blunt",
+          "sin": "gloom",
+          "copies": 2
+        },
+        {
+          "name": "S3 处刑",
+          "base_power": 12,
+          "coin_power": [
+            12,
+            12
+          ],
+          "dmg_type": "blunt",
+          "sin": "gloom",
+          "cond": {
+            "charge_at_least": 5,
+            "base_power_add": 4
+          },
+          "copies": 1
+        }
+      ]
+    }
+  ]
+}
